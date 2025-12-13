@@ -3,31 +3,41 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: "Noto Sans", sans-serif;
 }
 
 body {
     overflow-x: hidden;
-    width: 100vw;
+    width: 100%;
 }
 
-nav {width: 100vw;
-    padding: 0 15px;
+/* Navigation */
+nav {
+    width: 100%;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: white;
+    position: relative;
 }
 
 .logo {
     width: 140px;
     margin-left: 40px;
+}
 
+.logo img {
+    width: 100%;
+    height: auto;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     padding: 0 60px;
+    gap: 15px;
 }
 
 .nav-links li {
@@ -48,24 +58,37 @@ nav {width: 100vw;
     transition: 0.3s;
 }
 
+.hamburger {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
 
+.hamburger img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Hero Section */
 .bg {
-    height: 66vh;
-    margin-left: 2vw;
+    min-height: 66vh;
     width: 100%;
     background-image: url("https://rapido-app-assets.storage.googleapis.com/66e1052cdca1e68cc52d070e8c9631aa_1736774712641.png");
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
 }
 
 .bg h1 {
     font-size: 48px;
     font-weight: 700;
     color: rgb(51, 51, 51);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 60px;
+    text-align: center;
+    padding: 65px 20px 60px;
     margin-top: 30px;
-    padding: 65px;
 }
 
 .input-container {
@@ -78,6 +101,7 @@ nav {width: 100vw;
 
 .input-container input {
     width: 40vw;
+    max-width: 600px;
     height: 40px;
     padding: 12px 12px 12px 40px;
     border: 1px solid #ccc;
@@ -87,111 +111,106 @@ nav {width: 100vw;
 }
 
 .input-container svg {
-    width: 720px;
+    width: 24px;
+    height: 24px;
     position: absolute;
-    left: 10px;
+    left: calc(50% - 20vw - 16px);
     top: 50%;
     transform: translateY(-50%);
-    height: 30px;
     fill: black;
 }
 
 .btn {
     background-color: rgb(255, 200, 0);
-    margin-bottom: 15px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44vw;
+    width: 40vw;
+    max-width: 600px;
     height: 60px;
     border: 1px solid #ccc;
     border-radius: 10px;
     font-size: 28px;
-    font-size: bolder;
     font-weight: 700;
-    left: 350px;
-    margin-top: 40px;
+    margin: 40px auto 15px;
     cursor: pointer;
+    display: block;
 }
 
+/* Services Section */
 .services {
     font-size: 48px;
     font-weight: 700;
     color: rgb(51, 51, 51);
-    display: block;
-    width: 100%;
-    padding-top: 80px;
-    padding-left: 50px;
+    padding: 80px 50px 0;
 }
 
 .line {
     width: 100px;
     height: 5px;
     background-color: rgb(255, 200, 0);
-    margin-top: 10px;
-    left: 50px;
+    margin: 10px 0 0 50px;
 }
 
 .images {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding-bottom: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 60px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.img2 {
-    padding-left: 90px;
+.images .images-item {
+    text-align: center;
 }
 
 .images .images-item img {
-    padding-top: 40px;
     height: 120px;
     width: 150px;
-    padding: 30px 80px;
+    object-fit: contain;
 }
 
 .images-item p {
     font-size: 22px;
     font-weight: 550;
-    padding: 0px 90px;
+    margin-top: 10px;
 }
 
+/* Ride Sections */
 .ride {
     background-color: rgb(244, 243, 243);
     display: flex;
+    align-items: center;
+    padding: 60px 50px;
+    gap: 40px;
 }
 
-.item {
-    padding-left: 30px;
-    margin-right: 60px;
+.ride .item {
+    flex: 1;
+    padding: 20px;
 }
 
-.item p {
+.ride .item h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: rgb(51, 51, 51);
+    margin-bottom: 20px;
+}
+
+.ride .item p {
     font-size: 32px;
     font-weight: 400;
-    padding: 0px 20px;
+    margin-bottom: 20px;
 }
 
 .ride img {
-    height: 500px;
-    width: 600px;
-    padding-right: 90px;
-    padding-top: 60px;
+    flex: 1;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
-.safety {
-    background-color: white;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-}
-
-.safety img {
-    height: 400px;
-    width: 500px;
-    padding-right: 90px;
-    padding-top: 60px;
+.img2 {
+    order: -1;
 }
 
 .btn1 {
@@ -201,20 +220,57 @@ nav {width: 100vw;
     border-radius: 50px;
     border: none;
     color: white;
-    margin: 30px 10px;
+    margin: 30px 0;
     font-size: 20px;
+    cursor: pointer;
 }
 
+/* Safety Section */
+.safety {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 60px 50px;
+    gap: 40px;
+}
+
+.safety .item {
+    flex: 1;
+    padding: 20px;
+}
+
+.safety .item h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: rgb(51, 51, 51);
+    margin-bottom: 20px;
+}
+
+.safety .item p {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.safety img {
+    flex: 1;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Download Section */
 .download-section {
     text-align: center;
     background-color: black;
+    padding: 60px 20px;
 }
 
 .download-section h1 {
     color: rgb(246, 247, 249);
     font-size: 48px;
     font-weight: 700;
-    position: relative;
+    margin-bottom: 40px;
 }
 
 .apps-container {
@@ -222,7 +278,7 @@ nav {width: 100vw;
     justify-content: center;
     align-items: center;
     gap: 80px;
-    margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .app {
@@ -231,7 +287,7 @@ nav {width: 100vw;
 
 .app img {
     width: 80px;
-    height: auto;
+    height: 80px;
     border-radius: 10px;
 }
 
@@ -242,6 +298,23 @@ nav {width: 100vw;
     color: rgb(255, 255, 255);
 }
 
+/* Media Section */
+.media {
+    padding: 60px 20px;
+}
+
+.media h1 {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.media hr {
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
 .media-icons {
     display: flex;
     justify-content: center;
@@ -250,45 +323,59 @@ nav {width: 100vw;
     margin: 40px 0;
 }
 
-.media img {
+.media-icons img {
     width: 100px;
     height: 100px;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
+.media-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
 .footer {
     text-align: center;
-    padding: 20px;
+    padding: 60px 20px 20px;
 }
 
 .footer-logo {
-    width: 80px;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .footer-logo img {
     max-width: 150px;
+    height: auto;
 }
-
 
 .footer-menu {
     display: flex;
-    justify-content: space-between;
-    max-width: 1000px;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .footer-column {
     display: flex;
     flex-direction: column;
     text-align: left;
+    gap: 10px;
 }
 
 .footer-column a {
     text-decoration: none;
     color: black;
-    margin: 5px 0;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: rgb(255, 200, 0);
 }
 
 .copyright {
@@ -296,115 +383,358 @@ nav {width: 100vw;
     font-weight: 400;
     color: rgb(128, 128, 128);
     padding: 20px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 
-.hamburger {
-    display: none;
-    font-size: 30px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    right: 0px;
-    top: 15px;
+/* Tablet View (768px - 1024px) */
+@media (max-width: 1024px) {
+    .bg h1 {
+        font-size: 40px;
+        padding: 50px 20px 40px;
+    }
+
+    .input-container input {
+        width: 60vw;
+    }
+
+    .input-container svg {
+        left: calc(50% - 30vw - 16px);
+    }
+
+    .btn {
+        width: 60vw;
+        font-size: 24px;
+    }
+
+    .services {
+        font-size: 40px;
+        padding: 60px 30px 0;
+    }
+
+    .line {
+        margin-left: 30px;
+    }
+
+    .images {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 40px 30px;
+    }
+
+    .ride,
+    .safety {
+        padding: 40px 30px;
+    }
+
+    .ride .item h1,
+    .safety .item h1 {
+        font-size: 40px;
+    }
+
+    .ride .item p,
+    .safety .item p {
+        font-size: 24px;
+    }
+
+    .download-section h1,
+    .media h1 {
+        font-size: 40px;
+    }
+
+    .app p {
+        font-size: 22px;
+    }
+
+    .footer-menu {
+        gap: 40px;
+    }
 }
 
+/* Mobile View (below 768px) */
 @media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        width: 120px;
+        margin-left: 0;
+    }
+
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 70px;
         left: 0;
+        right: 0;
         background: white;
         width: 100%;
-        text-align: center;
+        padding: 20px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
     }
 
     .nav-links.active {
         display: flex;
     }
 
-    .images {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        padding-bottom: 100px;
-        padding-top: 190px;
-    }
-
-    .bg {
-        height: 83vh;
-        width: 246vw;
-    }
-
-    .input-container input {
-        width: 160vw;
-        height: 46px;
-        padding: 12px 12px 12px 40px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        font-size: 16px;
-        outline: none;
-    }
-
-    .input-container svg {
-        width: 339px;
-        position: absolute;
-        left: 10px;
-        top: 45%;
-        transform: translateY(-50%);
-        height: 30px;
-        fill: black;
-    }
-
-    .btn {
-        background-color: rgb(255, 200, 0);
-        margin-bottom: 15px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 170vw;
-        height: 60px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        font-size: 28px;
-        font-size: bolder;
-        font-weight: 700;
-        left: 164px;
-        margin-top: 40px;
-        cursor: pointer;
-    }
-
-    .logo {
-        width: 168px;
-        margin-left: 100px;
-    }
-
-    .download-section {
+    .nav-links li {
+        margin: 10px 0;
         text-align: center;
-        background-color: black;
-        width: 105%;
-    }
-
-    .ride {
-        width: 105%;
     }
 
     .hamburger {
         display: block;
-        left: 600px;
-        height: 50px;
-        width: 50px;
     }
 
-    .nav-links.active {
-        display: flex;
-        left: 600px;
+    .bg {
+        min-height: 80vh;
+        padding: 20px 10px;
+    }
+
+    .bg h1 {
+        font-size: 32px;
+        padding: 40px 10px 30px;
+        margin-top: 20px;
+    }
+
+    .input-container input {
+        width: 85vw;
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .input-container svg {
+        left: calc(50% - 42.5vw - 12px);
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn {
+        width: 85vw;
+        height: 55px;
+        font-size: 22px;
+        margin: 30px auto 15px;
+    }
+
+    .services {
+        font-size: 32px;
+        padding: 50px 20px 0;
+    }
+
+    .line {
+        margin-left: 20px;
+    }
+
+    .images {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px 20px;
+        gap: 15px;
+    }
+
+    .images .images-item img {
+        height: 100px;
+        width: 120px;
+    }
+
+    .images-item p {
+        font-size: 18px;
+    }
+
+    .ride,
+    .safety {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    .ride .item,
+    .safety .item {
+        padding: 0;
+    }
+
+    .ride .item h1,
+    .safety .item h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .ride .item p,
+    .safety .item p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .ride img,
+    .safety img {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .img2 {
+        order: 0;
+    }
+
+    .btn1 {
+        width: 180px;
+        height: 55px;
+        font-size: 18px;
+        display: block;
+        margin: 20px auto;
+    }
+
+    .download-section {
+        padding: 40px 20px;
+    }
+
+    .download-section h1 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .apps-container {
+        gap: 40px;
+    }
+
+    .app img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .app p {
+        font-size: 18px;
+    }
+
+    .media {
+        padding: 40px 20px;
+    }
+
+    .media h1 {
+        font-size: 32px;
+    }
+
+    .media-icons img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer {
+        padding: 40px 20px 20px;
+    }
+
+    .footer-logo img {
+        max-width: 120px;
+    }
+
+    .footer-menu {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .footer-column a {
+        font-size: 14px;
+    }
+
+    .copyright {
+        font-size: 14px;
+    }
+}
+
+/* Small Mobile View (below 480px) */
+@media (max-width: 480px) {
+    .logo {
+        width: 100px;
+    }
+
+    .bg h1 {
+        font-size: 28px;
+        padding: 30px 10px 20px;
+    }
+
+    .input-container input {
+        width: 90vw;
+        height: 48px;
+        font-size: 14px;
+    }
+
+    .input-container svg {
+        left: calc(50% - 45vw - 12px);
+    }
+
+    .btn {
+        width: 90vw;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .services {
+        font-size: 28px;
+        padding: 40px 15px 0;
+    }
+
+    .line {
+        margin-left: 15px;
+    }
+
+    .images {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px 15px;
+        gap: 10px;
+    }
+
+    .images .images-item img {
+        height: 80px;
+        width: 100px;
+    }
+
+    .images-item p {
+        font-size: 16px;
+    }
+
+    .ride .item h1,
+    .safety .item h1 {
+        font-size: 28px;
+    }
+
+    .ride .item p,
+    .safety .item p {
+        font-size: 18px;
+    }
+
+    .btn1 {
+        width: 160px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .download-section h1 {
+        font-size: 28px;
+    }
+
+    .app img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .app p {
+        font-size: 16px;
+    }
+
+    .media h1 {
+        font-size: 28px;
+    }
+
+    .media-icons img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer-column a {
+        font-size: 13px;
     }
 }
