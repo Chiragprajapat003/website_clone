@@ -1,0 +1,354 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #3c5770 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Login Container */
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Alert Banner */
+.alert-banner {
+    width: 100%;
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    color: #fff;
+    text-align: center;
+    padding: 15px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+}
+
+/* Logo */
+.logo {
+    margin-bottom: 50px;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+/* Login Form */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input Group */
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px 0 0 4px;
+    color: #95a5a6;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 20px 15px 65px;
+    background: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #2c3e50;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.input-group input::placeholder {
+    color: #95a5a6;
+}
+
+.input-group input:focus {
+    box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.3);
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #e55a24 0%, #e6820d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Form Links */
+.form-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.link {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #5dade2;
+    text-decoration: underline;
+}
+
+/* Footer */
+.login-footer {
+    margin-top: 80px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-logo {
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    height: 30px;
+    width: auto;
+    opacity: 0.7;
+}
+
+.login-footer p {
+    font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        max-width: 400px;
+    }
+
+    .alert-banner {
+        font-size: 0.9rem;
+        padding: 12px 15px;
+        margin-bottom: 30px;
+    }
+
+    .logo {
+        margin-bottom: 40px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .input-group input {
+        padding: 13px 15px 13px 60px;
+        font-size: 0.9rem;
+    }
+
+    .login-btn {
+        padding: 13px 20px;
+        font-size: 0.95rem;
+    }
+
+    .form-links {
+        gap: 20px;
+    }
+
+    .link {
+        font-size: 0.9rem;
+    }
+
+    .login-footer {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .login-container {
+        max-width: 100%;
+    }
+
+    .alert-banner {
+        font-size: 0.85rem;
+        padding: 10px 12px;
+        margin-bottom: 25px;
+        border-radius: 4px;
+    }
+
+    .logo {
+        margin-bottom: 30px;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    .login-form {
+        gap: 15px;
+    }
+
+    .input-icon {
+        width: 45px;
+    }
+
+    .input-group input {
+        padding: 12px 15px 12px 55px;
+        font-size: 0.85rem;
+    }
+
+    .login-btn {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+
+    .btn-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .form-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .link {
+        font-size: 0.85rem;
+    }
+
+    .login-footer {
+        margin-top: 50px;
+    }
+
+    .footer-logo img {
+        height: 25px;
+    }
+
+    .login-footer p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .alert-banner {
+        font-size: 0.8rem;
+    }
+
+    .input-group input {
+        font-size: 0.8rem;
+    }
+
+    .login-btn {
+        font-size: 0.85rem;
+    }
+}
+
+/* Additional Hover and Focus States */
+.input-group:focus-within .input-icon {
+    color: #f39c12;
+    background: rgba(243, 156, 18, 0.1);
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Loading state for button (optional) */
+.login-btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.login-btn.loading::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
